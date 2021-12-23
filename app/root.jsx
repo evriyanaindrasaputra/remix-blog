@@ -6,8 +6,9 @@ import {
   Outlet,
 } from "remix";
 import globalStylesUrl from '~/styles/global.css'
+import tailwindUrl from '~/styles/tailwind.css'
 
-export const links = () => [{ rel: 'stylesheet', href: globalStylesUrl }]
+export const links = () => [{ rel: 'stylesheet', href: globalStylesUrl }, { rel: 'stylesheet', href: tailwindUrl }]
 export const meta = () => {
   const description = 'A cool blog built with Remix'
   const keywords = 'remix, react, javascript'

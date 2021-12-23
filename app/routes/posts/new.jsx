@@ -1,5 +1,5 @@
 import { Link, redirect, useActionData, json } from 'remix'
-// import { db } from '~/utils/db.server'
+import { db } from '~/utils/db.server'
 // import { getUser } from '~/utils/session.server'
 
 // function validateTitle(title) {
@@ -37,10 +37,10 @@ export const action = async ({ request }) => {
   // }
 
   // const post = await db.post.create({ data: { ...fields, userId: user.id } })
-  console.log(fields)
+  const post = await db.post.create({ data: fields })
+  // console.log(fields)
 
-  // return redirect(`/posts/${post.id}`)
-  return redirect(`/posts`)
+  return redirect(`/posts/${post.id}`)
 }
 
 function NewPost() {
